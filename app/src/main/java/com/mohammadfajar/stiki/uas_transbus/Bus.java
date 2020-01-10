@@ -1,6 +1,9 @@
 package com.mohammadfajar.stiki.uas_transbus;
 
-public class Bus {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Bus implements Parcelable {
     private String namaBus;
     private String tujuan;
     private int harga;
@@ -35,4 +38,34 @@ public class Bus {
     public void setHarga(int harga){
         this.harga =harga;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.namaBus);
+        dest.writeString(this.tujuan);
+        dest.writeInt(this.harga);
+    }
+
+    protected Bus(Parcel in) {
+        this.namaBus = in.readString();
+        this.tujuan = in.readString();
+        this.harga = in.readInt();
+    }
+
+    public static final Creator<Bus> CREATOR = new Creator<Bus>() {
+        @Override
+        public Bus createFromParcel(Parcel source) {
+            return new Bus(source);
+        }
+
+        @Override
+        public Bus[] newArray(int size) {
+            return new Bus[size];
+        }
+    };
 }

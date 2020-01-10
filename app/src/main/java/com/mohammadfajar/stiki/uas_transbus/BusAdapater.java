@@ -1,6 +1,8 @@
 package com.mohammadfajar.stiki.uas_transbus;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,10 +24,18 @@ public class BusAdapater extends RecyclerView.Adapter<BusAdapater.BusViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(BusViewHolder holder, int position) {
+    public void onBindViewHolder(BusViewHolder holder, final int position) {
        holder.tvNamaBus.setText(dataList.get(position).getNamBus());
        holder.tvTujuan.setText(dataList.get(position).getTujuan());
-       holder.tvHarga.setText(dataList.get(position).getHarga());
+       holder.tvHarga.setText(dataList.get(position).getHarga()+"");
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent detail = new Intent(v.getContext(),Pesan1Activity.class);
+               detail.putExtra(Pesan1Activity.EXTRA_BUS,dataList.get(position));
+               v.getContext().startActivity(detail);
+           }
+       });
     }
 
     @Override

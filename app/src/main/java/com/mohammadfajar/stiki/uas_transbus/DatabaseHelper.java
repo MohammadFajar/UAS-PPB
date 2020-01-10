@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public  Boolean cekLogin(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM user WHERE username = ? AND password = ?", new String[]{username, password});
-        if (cursor.getCount() > 0){
+        if (cursor.getCount() <= 0){
             return false;
         }else{
             return true;

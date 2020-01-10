@@ -26,6 +26,7 @@ import java.util.Locale;
 
 
 public class Pesan1Activity extends AppCompatActivity {
+    public static String EXTRA_BUS = "extra_bus";
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
     private TextView HasilTgl;
@@ -42,6 +43,7 @@ public class Pesan1Activity extends AppCompatActivity {
     EditText Tanggal, tujuan;
     Spinner spbus, spjam, spjumlah;
 
+    Bus busOrder;
 
     private void showDateDialog(){
         Calendar newCalendar = Calendar.getInstance();
@@ -85,8 +87,11 @@ public class Pesan1Activity extends AppCompatActivity {
         spjam = (Spinner) findViewById(R.id.spinJam);
         spjumlah = (Spinner)  findViewById(R.id.SpinnerJumlah);
 
-
-
+        /**
+         * Get Extra Object
+         */
+        busOrder = getIntent().getParcelableExtra(EXTRA_BUS);
+        harga.setText(busOrder.getHarga()+"");
 
         //set Spinner
         ArrayAdapter<String> adapterbus= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,bus);
