@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Pesan1Activity">
+
+    <TextView
+        android:text="Tujuan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+   <EditText
+       android:id="@+id/ettujuan"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvTanggal"
+        android:text="Tanggal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_dateresult"
+        android:layout_width="fill_parent"
+        android:hint="dd/MM/yyyy"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Nama Bus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spBus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Jam Berangkat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinJam"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Jumlah Tiket"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/SpinnerJumlah"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Harga"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Rp. "
+        android:id="@+id/tvHarga"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnPesan"
+        android:text="Pesan"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="50dp"/>
+
+
+</LinearLayout>

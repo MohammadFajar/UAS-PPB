@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlSlider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="PROMO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ViewFlipper
+            android:id="@+id/v_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_centerHorizontal="true">
+
+        </ViewFlipper>
+
+        <TableLayout
+            android:layout_below="@id/v_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:id="@+id/tr1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="8dp"
+                android:background="#00000000"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btnCari"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="#00000000"
+                    android:src="@drawable/search" />
+
+
+                <ImageButton
+                    android:id="@+id/btnHistory"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="#00000000"
+                    android:src="@drawable/clock" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_below="@+id/tr1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Cari"
+                    android:layout_gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:text="Perjalananku"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_below="@+id/tr1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btnAbout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="#00000000"
+                    android:src="@drawable/about" />
+                <ImageButton
+                    android:id="@+id/btnlogout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="#00000000"
+                    android:src="@drawable/logout" />
+            </TableRow>
+
+            <TableRow
+                android:layout_below="@+id/tr1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Tentang"
+                    android:layout_gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:text="Keluar"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+</LinearLayout>

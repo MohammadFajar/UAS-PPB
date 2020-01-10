@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/etLogin"
+        android:layout_width="125dp"
+        android:layout_height="36dp"
+        android:text="LOGIN"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Username"
+        android:textSize="15sp"
+        android:typeface="monospace"
+        android:gravity="left"
+        android:layout_gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="181dp"
+        android:layout_height="36dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/et_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Password"
+        android:textSize="15sp"
+        android:typeface="monospace"
+        android:layout_gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="181dp"
+        android:layout_height="36dp"
+        android:textSize="18sp"
+        android:password="true"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="87dp"
+        android:layout_height="42dp"
+        android:background="#ffff0000"
+        android:layout_marginTop="10dp"
+        android:text="MASUK"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="87dp"
+        android:layout_height="42dp"
+        android:background="#ff33cc00"
+        android:layout_marginTop="10dp"
+        android:text="DAFTAR"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
