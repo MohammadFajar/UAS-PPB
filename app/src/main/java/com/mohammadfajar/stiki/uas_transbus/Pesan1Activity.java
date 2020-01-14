@@ -36,13 +36,12 @@ public class Pesan1Activity extends AppCompatActivity {
     DatabaseHelper db;
     ListView lihatHistory;
     String[] data;
-    int hTiket;
-    String dTujuan;
+    String pTujuan,pNamaBus, ptgl, pjam, pTotal, pJml;
     Button btnPesan;
-    TextView namaBus, harga;
-    EditText Tanggal, tujuan;
-    Spinner spbus, spjam, spjumlah;
+    TextView namaBus, harga, tujuan, total;
 
+    EditText Tanggal;
+    Spinner spbus, spjam, spjumlah;
     Bus busOrder;
 
     private void showDateDialog(){
@@ -69,21 +68,19 @@ public class Pesan1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesan1);
 
+        db = new DatabaseHelper(this);
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         HasilTgl = (TextView) findViewById(R.id.tvTanggal);
         pickTgl = (EditText) findViewById(R.id.et_dateresult);
 
-        //final String [] tujuan ={"Jombang", "Kediri", "Ngawi", "Surabaya"};
-        String [] jam = {"07.00","08.30","10.00", "14.00", "15.30"};
-        String [] jumlah = {"1", "2", "3", "4", "5"};
-        String [] bus ={"Bagong", "Puspa", "Panda"};
+        final String [] jam = {"07.00","08.30","10.00", "14.00", "15.30"};
+        final Integer [] jumlah = new Integer[] {1, 2, 3, 4, 5};
 
         btnPesan = (Button) findViewById(R.id.btnPesan);
         harga = (TextView) findViewById(R.id.tvHarga);
-        tujuan = (EditText) findViewById(R.id.ettujuan);
-        String Tempholder=getIntent().getStringExtra("Listviewclickvalue");
-        tujuan.setText(Tempholder);
-        spbus = (Spinner) findViewById(R.id.spBus);
+        tujuan = (TextView) findViewById(R.id.tvTujuan);
+        namaBus = (TextView) findViewById(R.id.tvNamaBus);
+
         spjam = (Spinner) findViewById(R.id.spinJam);
         spjumlah = (Spinner)  findViewById(R.id.SpinnerJumlah);
 
@@ -92,29 +89,57 @@ public class Pesan1Activity extends AppCompatActivity {
          */
         busOrder = getIntent().getParcelableExtra(EXTRA_BUS);
         harga.setText(busOrder.getHarga()+"");
-
-        //set Spinner
-        ArrayAdapter<String> adapterbus= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,bus);
-        adapterbus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spbus.setAdapter(adapterbus);
+        tujuan.setText(busOrder.getTujuan()+"");
+        namaBus.setText(busOrder.getTujuan()+"");
 
         ArrayAdapter<String> adapterJam = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,jam);
         adapterJam.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spjam.setAdapter(adapterJam);
 
-        ArrayAdapter<String> adapterJumlah= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, jumlah);
+        ArrayAdapter<Integer> adapterJumlah = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, jumlah);
         adapterJumlah.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spjumlah.setAdapter(adapterJumlah);
+
+
+        spjumlah.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int temJum = jumlah[i];
+                int jml = Integer.parseInt(harga.getText().toString());
+                int total = temJum * jml;
+                String output = String.valueOf(total);
+                harga.setText(output);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
         btnPesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+             pNamaBus = namaBus.getText().toString();
+             pTujuan = tujuan.getText().toString();
+             ptgl = HasilTgl.getText().toString();
+             pTotal = harga.getText().toString();
+             pjam = spjam.getSelectedItem().toString();
+             pJml = spjumlah.getSelectedItem().toString();
 
 
+             boolean sukses = db.insertData(pTujuan, ptgl, pNamaBus, pjam, pJml, pTotal);
+             if(sukses){
+                Toast.makeText(getApplicationContext(), "Tiket Berhasil diPesan", Toast.LENGTH_LONG).show();
+             }else{
+                 Toast.makeText(getApplicationContext(), "Tiket GAGAL diPesan", Toast.LENGTH_LONG).show();
+             }
 
             }
         });
+
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         HasilTgl = (TextView) findViewById(R.id.et_dateresult);

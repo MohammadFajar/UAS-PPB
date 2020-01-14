@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -8,16 +9,20 @@
     tools:context=".Pesan1Activity">
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:text="Tujuan"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
-   <EditText
-       android:id="@+id/ettujuan"
+   <TextView
+       android:id="@+id/tvTujuan"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:id="@+id/tvTanggal"
         android:text="Tanggal"
         android:layout_width="fill_parent"
@@ -30,16 +35,20 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:text="Nama Bus"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
-    <Spinner
-        android:id="@+id/spBus"
+    <TextView
+        android:id="@+id/tvNamaBus"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:text="Jam Berangkat"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
@@ -50,6 +59,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:text="Jumlah Tiket"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
@@ -59,7 +70,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+ <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:text="Harga"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
@@ -70,12 +83,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
+
     <Button
         android:id="@+id/btnPesan"
         android:text="Pesan"
         android:layout_gravity="center"
         android:layout_width="150dp"
         android:layout_height="50dp"/>
-
 
 </LinearLayout>

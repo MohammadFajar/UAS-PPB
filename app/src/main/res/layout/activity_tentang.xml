@@ -2,61 +2,65 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical" >
 
-    <android.widget.Toolbar
-        android:theme="@style/AppTheme"
-        android:background="@color/colorPrimary"
-        android:id="@+id/toolbar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:background="#FFFF0000"
+        android:layout_height="56dp"
         android:layout_width="match_parent"
-        android:layout_height="56dp"></android.widget.Toolbar>
-
+        />
     <ImageView
         android:id="@+id/tvlogo"
         android:src="@drawable/logo"
         android:layout_gravity="center"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
+
     <TextView
         android:paddingTop="30dp"
         android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="#FF000000"
         android:textStyle="bold"
         android:text="TransBus Version 1.0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#FF000000"
         android:textAlignment="center"
         android:text="Januari 2020"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#FF000000"
         android:paddingTop="30dp"
         android:textAlignment="center"
         android:textStyle="bold"
         android:text="Mohammad Fajar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <TextView
+        android:textColor="#FF000000"
         android:textAlignment="center"
         android:text="17111055"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <TextView
+        android:textColor="#FF000000"
         android:textAlignment="center"
         android:text="mohammadfajar395@gmail.com"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:text="17111055"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#FF000000"
         android:paddingTop="30dp"
         android:textAlignment="center"
         android:text="Supported by :"
@@ -70,6 +74,7 @@
         android:layout_height="100dp"/>
 
     <TextView
+        android:textColor="#FF000000"
         android:paddingTop="30dp"
         android:textAlignment="center"
         android:text="Sekolah Tinggi Informatika dan Komputer Indonesia"
@@ -77,6 +82,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#FF000000"
         android:textAlignment="center"
         android:text="Jl. Tidar No. 100 Malang"
         android:layout_width="match_parent"

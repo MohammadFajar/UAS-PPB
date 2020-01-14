@@ -25,8 +25,8 @@ public class BusAdapater extends RecyclerView.Adapter<BusAdapater.BusViewHolder>
 
     @Override
     public void onBindViewHolder(BusViewHolder holder, final int position) {
-       holder.tvNamaBus.setText(dataList.get(position).getNamBus());
-       holder.tvTujuan.setText(dataList.get(position).getTujuan());
+       holder.tvNamaBus.setText(dataList.get(position).getNamBus()+"");
+       holder.tvTujuan.setText(dataList.get(position).getTujuan()+"");
        holder.tvHarga.setText(dataList.get(position).getHarga()+"");
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override

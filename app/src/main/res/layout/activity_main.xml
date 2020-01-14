@@ -33,14 +33,13 @@
                 android:id="@+id/tr1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_marginTop="8dp"
                 android:background="#00000000"
                 android:gravity="center">
 
                 <ImageButton
                     android:id="@+id/btnCari"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="#00000000"
                     android:src="@drawable/search" />
 
@@ -61,11 +60,13 @@
                 android:gravity="center">
 
                 <TextView
+                    android:textColor="#FF000000"
                     android:text="Cari"
                     android:layout_gravity="center"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"/>
                 <TextView
+                    android:textColor="#FF000000"
                     android:layout_gravity="center"
                     android:text="Perjalananku"
                     android:layout_width="150dp"
@@ -81,14 +82,14 @@
 
                 <ImageButton
                     android:id="@+id/btnAbout"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="#00000000"
                     android:src="@drawable/about" />
                 <ImageButton
                     android:id="@+id/btnlogout"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="#00000000"
                     android:src="@drawable/logout" />
             </TableRow>
@@ -100,11 +101,13 @@
                 android:gravity="center">
 
                 <TextView
+                    android:textColor="#FF000000"
                     android:text="Tentang"
                     android:layout_gravity="center"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"/>
                 <TextView
+                    android:textColor="#FF000000"
                     android:layout_gravity="center"
                     android:text="Keluar"
                     android:layout_width="150dp"

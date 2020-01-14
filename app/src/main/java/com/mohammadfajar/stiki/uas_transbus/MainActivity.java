@@ -57,11 +57,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
+        btnHistory.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent historyIntent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(historyIntent);
+            }
+        });
 
         int images[] = {R.drawable.gambar1, R.drawable.slide2, R.drawable.slide3};
 

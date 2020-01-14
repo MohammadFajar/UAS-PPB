@@ -18,6 +18,7 @@ public class tentangActivity extends Activity {
         Button btnBack = (Button) this.findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new klik());
 
+
     }
 
     class klik implements Button.OnClickListener

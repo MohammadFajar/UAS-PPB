@@ -11,9 +11,30 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    private static final String TABLE_NAME = "Transakasi";
+    private static final String COL1 = "ID";
+    private static final String COL2 = "tujuan";
+    private static final String COL3 = "tgl";
+    private static final String COL4 = "namabus";
+    private static final String COL5 = "jam";
+    private static final String COL6 = "jml";
+    private static final String COL7 = "harga";
+
+    private static final String CREATE_TABLE =
+            "CREATE TABLE " + TABLE_NAME + "("+
+                    COL1 + "INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                    COL2 + "TEXT, "+
+                    COL3 + "TEXT, "+
+                    COL4 + "TEXT, "+
+                    COL5 + "TEXT, "+
+                    COL6 + "TEXT, "+
+                    COL7 + "TEXT);";
+
+
     public DatabaseHelper(Context context) {
         super(context, "dbTransBus.db", null, 1);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -21,16 +42,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, username text, password text)");
         db.execSQL("INSERT INTO session(id, login) VALUES (1, 'kosong')");
 
-        String sql = "CREATE TABLE pesan (noBus integer PRIMARY KEY AUTOINCREMENT, tgl text null, namaBus text null, tujuan text null," +
-                "jam text null, jumlah text null, harga int null);";
-        Log.d("data", "onCreate:"+sql);
-        db.execSQL(sql);
+        db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS session");
         db.execSQL("DROP TABLE IF EXISTS user");
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
 
@@ -82,4 +101,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    //CRUD
+    //INSTERT DATA PEMESANAN TIKET
+    public boolean insertData(String tujuan, String tgl, String namaBus, String jam, String jml, String harga){
+        SQLiteDatabase db;
+        db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL2, tujuan);
+        contentValues.put(COL3, tgl);
+        contentValues.put(COL4, namaBus);
+        contentValues.put(COL5, jam);
+        contentValues.put(COL6, jml);
+        contentValues.put(COL7, harga);
+
+        long result = db.insert(TABLE_NAME, null, contentValues);
+
+        if(result == -1){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    public Cursor getData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
 }
