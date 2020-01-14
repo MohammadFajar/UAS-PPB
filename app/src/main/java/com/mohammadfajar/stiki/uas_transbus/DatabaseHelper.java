@@ -22,13 +22,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + "("+
-                    COL1 + "INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                    COL2 + "TEXT, "+
-                    COL3 + "TEXT, "+
-                    COL4 + "TEXT, "+
-                    COL5 + "TEXT, "+
-                    COL6 + "TEXT, "+
-                    COL7 + "TEXT);";
+                    COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                    COL2 + " TEXT, "+
+                    COL3 + " TEXT, "+
+                    COL4 + " TEXT, "+
+                    COL5 + " TEXT, "+
+                    COL6 + " TEXT, "+
+                    COL7 + " TEXT);";
 
 
     public DatabaseHelper(Context context) {
@@ -38,10 +38,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE session(id integer PRIMARY KEY,login text )");
-        db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, username text, password text)");
+        db.execSQL("CREATE TABLE session(id INTEGER PRIMARY KEY,login TEXT )");
+        db.execSQL("CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
         db.execSQL("INSERT INTO session(id, login) VALUES (1, 'kosong')");
-
         db.execSQL(CREATE_TABLE);
     }
 
